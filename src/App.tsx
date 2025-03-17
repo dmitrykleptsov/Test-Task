@@ -1,13 +1,17 @@
-import './App.style.scss'
+import Header from './components/Header/Header'
+import Navbar from './components/Navbar/Navbar'
+import ProjectPage from './components/ProjectPage/ProjectPage'
+
+import styles from './styles.module.scss'
 
 export function App() {
-    const params = Object.entries({
-        cc_load_policy: 0,
-        controls: 2,
-        fs: 0,
-        rel: 0,
-        showinfo: 0
-    }).map(([key, value]) => `${key}=${value}`).join('&')
-
-    return <iframe src={'https://youtube.com/embed/BNflNL40T_M?' + params} />
+    return (
+        <div className={styles.header_navbar}>
+            <Header />
+            <Navbar />
+            <div className={styles.main_page}>
+                <ProjectPage />
+            </div>
+        </div>
+    )
 }

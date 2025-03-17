@@ -1,0 +1,37 @@
+.navbar {
+    display: flex;
+    flex-direction: column;
+    color: #A1A1AA;
+    background-color: #27272A;
+    width: 234px;
+    height: 1036px;
+
+    .navbar_name {
+        display: flex;
+        flex-direction: column;
+        background-color: #27272A;
+        padding: 3.5px;
+        margin-left: 20px;
+
+        .project_name {
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        .abb {
+            font-size: 10px;
+            font-weight: 400;
+        }
+    }
+
+    .menu {
+        color: white;
+
+        .menu_section {
+            width: 240px;
+            font-size: 14px;
+            margin-top: 16px;
+            margin-left: 56px;
+        }
+    }
+}

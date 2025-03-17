@@ -1,0 +1,35 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    background-color: #27272A;
+
+    .header_menu {
+        display: flex;
+        flex-direction: row;
+        font-size: 14px;
+        font-weight: 400;
+        padding: 13px 0 13px 20px;
+
+        .menu_esc {
+            margin-right: 20px;
+            color: #A1A1AA;
+        }
+
+        .menu_back {
+            margin-right: 20px;
+            color: #A1A1AA;
+        }
+
+        .menu_view {
+            margin-right: 20px;
+            color: white;
+            font-weight: 400px;
+        }
+
+        .menu_control {
+            color: #A1A1AA;
+            margin-right: 20px;
+            font-weight: 400px;
+        }
+    }
+}
