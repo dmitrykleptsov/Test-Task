@@ -1,17 +1,20 @@
+@use '../../assets/styles/constants.scss' as *;
+@use '../../assets/styles/colors.scss' as *;
+
 .navbar {
     display: flex;
     flex-direction: column;
-    color: #A1A1AA;
-    background-color: #27272A;
-    width: 234px;
-    height: 1036px;
+    background-color: $menu-bg;
+    width: $navbar-width;
+    height: calc(100vh - $header-height);
 
     .navbar_name {
         display: flex;
         flex-direction: column;
-        background-color: #27272A;
-        padding: 3.5px;
-        margin-left: 20px;
+        padding: 8px 20px;
+        color: #A1A1AA;
+        border-right: 1px solid #414144;
+        border-bottom: 1px solid #414144;
 
         .project_name {
             font-size: 14px;
@@ -25,13 +28,33 @@
     }
 
     .menu {
-        color: white;
+        color: $regular-text-white;
+        border-right: 1px solid #414144;
+        height: 100%;
 
-        .menu_section {
+        .section {
             width: 240px;
             font-size: 14px;
-            margin-top: 16px;
-            margin-left: 56px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 5px 20px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #A1A1AA;
+            }
+
+            .icon {
+                width: 24px;
+                height: 24px;
+                min-width: 24px;
+                min-height: 24px;
+
+                background-image: url("../../assets/images/project.svg");
+                background-size: cover;
+                margin-right: 14px;
+            }
         }
     }
 }

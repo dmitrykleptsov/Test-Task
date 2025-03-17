@@ -28,6 +28,11 @@ declare module '*.ico' {
     export default path
 }
 
+declare module '*.scss' {
+    const content: Record<string, string>;
+    export default content;
+}
+
 declare module '*.svg' {
     import type { FunctionComponent, SVGProps } from "react"
 

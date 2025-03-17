@@ -1,0 +1,16 @@
+@use './colors.scss' as *;
+
+@mixin regular-text-roboto(
+  $font-size: 14px,
+  $line-height: 100%,
+  $color: $regular-text-white,
+  $font-weight: 400,
+  $letter-spacing: 0,
+) {
+  font-family: Roboto, sans-serif;
+  font-weight: $font-weight;
+  font-size: $font-size;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+  color: $color;
+}

@@ -1,35 +1,63 @@
+@use '../../assets/styles/colors.scss' as *;
+@use '../../assets/styles/text.mixins' as *;
+
 .header {
     display: flex;
     flex-direction: column;
-    background-color: #27272A;
+    background-color: $menu-bg;
+    border-bottom: 1px solid #414144;
+    width: 100%;
+    padding: 10px 20px 0 20px;
 
-    .header_menu {
+    .menu_wrapper {
         display: flex;
         flex-direction: row;
         font-size: 14px;
         font-weight: 400;
-        padding: 13px 0 13px 20px;
 
-        .menu_esc {
+        .icon {
+            width: 24px;
+            height: 24px;
+            min-width: 24px;
+            min-height: 24px;
+            background-size: cover;
+            cursor: pointer;
+        }
+
+        .back {
+            background-image: url("../../assets/images/back.svg");
+        }
+
+        .menu {
+            background-image: url("../../assets/images/menu.svg");
+            margin-right: 20px;
+        }
+
+        .esc {
             margin-right: 20px;
             color: #A1A1AA;
         }
 
-        .menu_back {
+        .back {
             margin-right: 20px;
             color: #A1A1AA;
         }
 
-        .menu_view {
-            margin-right: 20px;
-            color: white;
-            font-weight: 400px;
+        .view {
+            text-decoration: none;
+            @include regular-text-roboto();
+            padding: 3px 3px 14px 3px;
+            margin-right: 24px;
+
+            &.underline {
+                border-bottom: 2px solid $regular-element-white;
+            }
         }
 
-        .menu_control {
+        .control {
             color: #A1A1AA;
             margin-right: 20px;
-            font-weight: 400px;
+            font-weight: 400;
         }
     }
 }
