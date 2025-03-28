@@ -18,7 +18,7 @@ export const HEADER_MENU = [
 	}
 ]
 
-const Header = () => {
+export default function Header() {
 	const location = useLocation()
 
 	return (
@@ -40,5 +40,3 @@ const Header = () => {
 		</div>
 	)
 }
-
-export default Header

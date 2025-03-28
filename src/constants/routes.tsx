@@ -1,4 +1,4 @@
 export const ROUTES = {
-  VIEW: '/',
-  MANAGE: '/manage'
+	VIEW: '/',
+	MANAGE: '/manage'
 }

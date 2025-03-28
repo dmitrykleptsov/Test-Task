@@ -2,85 +2,177 @@
 @use '../../assets/styles/colors.scss' as *;
 @use '../../assets/styles/text.mixins.scss' as *;
 
-
 .project_page {
     display: flex;
     flex-direction: column;
-    background-color: #202124;
+    background-color: $main-page-bg;
     width: 100%;
     height: calc(100vh - $header-height);
-    overflow-y: scroll;
-
+    overflow: hidden;
 
     .project_header {
         color: white;
         font-size: 18px;
-        font-weight: 400;
+        font-weight: 500;
         background-color: #27272A;
         padding: 12px 15px 10px 15px;
-        border-bottom: 1px solid #414144;
+        border-bottom: 1px solid $border-color;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
     }
 
-    >table {
-        margin-top: 10px;
-        margin-left: 10px;
+    .table_container {
+        overflow: auto;
+        position: relative;
+        will-change: transform;
+    }
+
+    .loading {
+        text-align: center;
+        padding: 20px;
+        color: $regular-text-gray;
+    }
+
+    .error {
+        color: #f44336;
+        padding: 20px;
+        text-align: center;
+    }
+
+    table {
+        width: 100%;
         border-collapse: collapse;
+        table-layout: auto;
 
-        >thead {
-            border-bottom: 1px solid #414144;
+        thead {
+            position: sticky;
+            top: 0;
+            background-color: $main-page-bg;
+            z-index: 1;
+            border-bottom: 1px solid $border-color;
 
-            >tr {
-                >th {
-                    border-bottom: 1px solid #414144;
-                    padding: 0 12px 12px 12px;
+            tr {
+                th {
+                    border-bottom: 1px solid $border-color;
+                    padding: 0 12px 12px 22px;
                     text-align: left;
-                    @include regular-text-roboto(14px, 100%, #A1A1AA);
+                    @include regular-text-roboto(14px, 100%, $regular-text-gray);
+                    white-space: nowrap;
                 }
             }
         }
 
-        >tbody {
-            >tr {
-                >td {
+        tbody {
+            tr {
+                td {
                     position: relative;
-                    padding: 21px 12px;
+                    padding: 15.5px 22px;
                     @include regular-text-roboto(14px, 100%, $regular-text-white);
+                    border-bottom: 1px solid $border-color;
+                    white-space: nowrap;
+                    
 
-                    border-bottom: 1px solid #414144;
+                    .icon_container {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        width: 55px;
+                        height: 28px;
+                        border-radius: 6px;
+                        z-index: 2;
 
-                    .icon_level {
-                        background-image: url("../../assets/images/level.svg");
-                        background-size: cover;
-                        width: 16px;
-                        height: 16px;
-                        min-width: 16px;
-                        min-height: 16px;
+                        &:hover {
+                            background-color: $border-color;
+
+                            .icon_trash {
+                                background-image: url("../../assets/images/trash.svg");
+                                background-size: cover;
+                                width: 16px;
+                                height: 16px;
+                                min-width: 16px;
+                                min-height: 16px;
+                                cursor: pointer;
+                                transition: transform 0.2s;
+                                will-change: transform;
+    
+                                &:hover {
+                                    transform: scale(1.1);
+                                }
+                            }
+                        }
+
+                        .create_row_text {
+                            display: inline-block; 
+                            margin-left: 88px; 
+                            vertical-align: middle; 
+                            transform: none;
+                            cursor: pointer;
+                            pointer-events: auto;
+                        }
+
+                        .icon_level {
+                            background-image: url("../../assets/images/level.svg");
+                            background-size: cover;
+                            width: 16px;
+                            height: 16px;
+                            min-width: 16px;
+                            min-height: 16px;
+                            cursor: pointer;
+                            transition: transform 0.2s;
+                            margin-left: 6.5px;
+
+                            &:hover {
+                                transform: scale(1.1);
+                            }
+                        }
                     }
+                    
 
                     .line {
                         position: absolute;
                         width: 2px;
-                        height: 22px;
+                        height: 29px;
                         background-color: #C6C6C6;
+                        will-change: transform;
+                        z-index: -1;
                     }
 
                     .line_top {
-                        top: 0px;
-                        height: 28px;
+                        top: -22.5px;
+                        height: 53px;
                     }
 
                     .line_extension {
-                        margin-top: -8px;
-                        height: 30px;
+                        margin-top: -13px;
+                        height: 35px;
                     }
 
                     .line_left {
                         height: 2px;
-                        width: 13px;
-                        margin-top: 6px;
+                        width: 14.5px;
+                        margin-top: 13px;
                     }
                 }
             }
         }
+    }
+}
+
+.editing {
+    background-color: $main-page-bg;
+    border-radius: 6px; 
+    border: 1px solid $border-color;
+    width: 176px;
+    height: 28px; 
+    color: $regular-text-white;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 0 12px;
+    line-height: 130%;
+    letter-spacing: 0.1px;
+    ::placeholder {
+        color: #71717A;
     }
 }

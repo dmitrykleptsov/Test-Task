@@ -7,20 +7,20 @@ import styles from './styles.module.scss'
 import './App.style.scss'
 
 
-export function App() {
+export default function App() {
 
-  return (
-    <Router>
-      <div className={styles.header_navbar}>
-        <Header />
-        <div className={styles.page}>
-          <Navbar />
-          <Routes>
-            <Route path={ROUTES.VIEW} element={<ProjectPage />} />
-            <Route path={ROUTES.MANAGE} element={<div />} />
-          </Routes>
-        </div>
-      </div>
-    </Router>
-  )
+	return (
+    	<Router>
+      		<div className={styles.header_navbar}>
+        		<Header />
+        		<div className={styles.page}>
+          		<Navbar />
+          		<Routes>
+            		<Route path={ROUTES.VIEW} element={<ProjectPage />} />
+            		<Route path={ROUTES.MANAGE} element={<div />} />
+          		</Routes>
+        		</div>
+      		</div>
+    	</Router>
+ 	)
 }

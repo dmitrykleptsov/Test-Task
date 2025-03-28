@@ -35,12 +35,12 @@
 
         .esc {
             margin-right: 20px;
-            color: #A1A1AA;
+            color: $regular-text-gray;
         }
 
         .back {
             margin-right: 20px;
-            color: #A1A1AA;
+            color: $regular-text-gray;
         }
 
         .view {
@@ -55,7 +55,7 @@
         }
 
         .control {
-            color: #A1A1AA;
+            color: $regular-text-gray;
             margin-right: 20px;
             font-weight: 400;
         }
